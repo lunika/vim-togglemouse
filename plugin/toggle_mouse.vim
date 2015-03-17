@@ -17,10 +17,12 @@ fun! s:ToggleMouse()
 
     if &mouse == ""
         let &mouse = s:old_mouse
+        set number
         echo "Mouse is for Vim (" . &mouse . ")"
     else
         let s:old_mouse = &mouse
         let &mouse=""
+        set nonumber
         echo "Mouse is for terminal"
     endif
 endfunction
